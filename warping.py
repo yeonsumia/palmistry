@@ -78,10 +78,10 @@ def extract_points(img):
     pts = count_finger(img, contours, defects)
 
     # image outputs - why img_path works?
-    cv.imwrite("results/thresh_" + img_path.split(os.sep)[1], thresh)
+    #cv.imwrite("results/thresh_" + img_path.split(os.sep)[1], thresh)
     #cv.imwrite("results/contour_" + img_path.split(os.sep)[1], img_contour)
-    cv.imwrite("results/hull_" + img_path.split(os.sep)[1], img_hull)
-    cv.imwrite("results/convexity_" + img_path.split(os.sep)[1], img_convexity)
+    #cv.imwrite("results/hull_" + img_path.split(os.sep)[1], img_hull)
+    #cv.imwrite("results/convexity_" + img_path.split(os.sep)[1], img_convexity)
     return np.float32(pts)
 
 
