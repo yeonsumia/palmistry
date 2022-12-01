@@ -151,10 +151,10 @@ def extract_points(img):
     pts += get_5th_pt(pts)
     cv.circle(img, pts[4], 10, [0, 0, 255], -1)
     # image outputs - why img_path works?
-    # cv.imwrite("results/thresh_" + img_path.split(os.sep)[1], thresh)
-    # cv.imwrite("results/contour_" + img_path.split(os.sep)[1], img_contour)
-    # cv.imwrite("results/hull_" + img_path.split(os.sep)[1], img_hull)
-    # cv.imwrite("results/convexity_" + img_path.split(os.sep)[1], img_convexity)
+    cv.imwrite("results/thresh_" + img_path.split(os.sep)[1], thresh)
+    cv.imwrite("results/contour_" + img_path.split(os.sep)[1], img_contour)
+    cv.imwrite("results/hull_" + img_path.split(os.sep)[1], img_hull)
+    cv.imwrite("results/convexity_" + img_path.split(os.sep)[1], img_convexity)
     return np.float32(pts)
 
 
