@@ -3,3 +3,6 @@
 *.zip
 *.tar.gz
 venv
+/data
+/results
+/data_failed
