@@ -1,0 +1,6 @@
+torch
+torchvision
+scikit-image
+opencv-python
+pillow-heif
+mediapipe
