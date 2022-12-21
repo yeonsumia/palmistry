@@ -1,4 +1,4 @@
-# Fortune On Your Hand: Projection Invariant Palmistry Recognition
+# Fortune On Your Hand: View-Invariant Machine Palmistry
 ### 2022-2 SNU Computer Vision Project
 
 # TODO
