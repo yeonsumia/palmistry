@@ -1,6 +1,6 @@
 # Fortune On Your Hand: View-Invariant Machine Palmistry
 ## Run
-<code>python ./codes/read_palm.py --input [filename].[jpg, HEIC, jpeg]</code>  
+<code>python ./code/read_palm.py --input [filename].[jpg, HEIC, jpeg]</code>  
 ## Summary
 Our *Palmistry principal lines detect software* is implemented by 4 steps below. Our main challenge was to read the principal lines on a palm regardless of the **view direction** and **illumination**:   
 1) Warping a tilted palm image  
