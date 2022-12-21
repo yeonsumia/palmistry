@@ -20,7 +20,11 @@ The codes are written based on Python 3.7.6. These are the requirements for runn
 In order to install the requirements, run `pip install -r ./code/requirements.txt`.
 
 ## Run
-<code>python ./code/read_palm.py --input [filename].[jpg, HEIC, jpeg]</code>  
+1. Before running the codes, **a palm image for input(.heic or .jpg)** should be prepared in the `./code/inputs` directory. We provided four sample inputs.
+2. Run `read_palm.py` by the command below. After running the code, result files will be saved in the `./code/results` directory.
+```bash
+> python ./code/read_palm.py --input [filename].[jpg, heic]
+```
 
 ## Results
 <img width="1371" alt="standard" src="https://user-images.githubusercontent.com/81272473/208797334-9cf56f18-01b1-46e5-9bab-5a38a696d05f.png">
