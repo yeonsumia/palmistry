@@ -2,7 +2,7 @@
 ## Run
 <code>python ./code/read_palm.py --input [filename].[jpg, HEIC, jpeg]</code>  
 ## Summary
-Our *Palmistry principal lines detect software* is implemented by 4 steps below. Our main challenge was to read the principal lines on a palm regardless of the **view direction** and **illumination**:   
+Our *Palmistry principal lines detection software* is implemented by 4 steps below. Our main challenge was to read the principal lines on a palm regardless of the **view direction** and **illumination**:   
 1) Warping a tilted palm image  
 2) Detecting principal lines on a palm  
 3) Classifying the lines  
