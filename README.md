@@ -1,11 +1,20 @@
 # Fortune On Your Hand: View-Invariant Machine Palmistry
-### 2022-2 SNU Computer Vision Project
+## Run
+<code>python ./codes/read_palm.py --input [filename].[jpg, HEIC, jpeg]</code>  
+## Summary
+Our *Palmistry principal lines detect software* is implemented by 4 steps below. Our main challenge was to read the principal lines on a palm regardless of the **view direction** and **illumination**:   
+1) Warping a tilted palm image  
+2) Detecting principal lines on a palm  
+3) Classifying the lines  
+4) Measuring the length of each line  
+<img width="1362" alt="model_architecture" src="https://user-images.githubusercontent.com/81272473/208795260-48ba6c8f-92a1-4b01-9471-6a4703ad0aff.png">
+For palm image rectification, we used MediaPipe to extract interest points and implemented warping with the points. For principal line detection, we built a deep learning model and trained the model with palm image dataset. For line classification, we used K-means clustering to allocate each pixel to specific line. For length measurement, we set a threshold for each principal line with the landmarks obtained by MediaPipe.
 
-# TODO
-- 떨어진 선들 잇기
-- grouping된 선들 가지고 life, heart, head line 구분 (기왕이면 색 다르게 해서 결과 띄우기)
+## Results
+<img width="1371" alt="standard" src="https://user-images.githubusercontent.com/81272473/208797334-9cf56f18-01b1-46e5-9bab-5a38a696d05f.png">
+<img width="1361" alt="tilted" src="https://user-images.githubusercontent.com/81272473/208797357-fe007daf-0d24-48b0-80af-21d79b64db4a.png">
 
-# Line Segment implementation
+## Line Segment implementation
 Update: 22.12.03 21:57
 - Assumption
   - line이 image의 테두리까지 가는 경우가 없음 (이 경우 scikit의 skeletonize가 종종 안됨. skeletonize 되더라도 grouping 알고리즘 조금 수정 필요)
@@ -26,6 +35,6 @@ Update: 22.12.03 21:57
     6. 3으로 끝난 line들끼리 이을 수 있나 확인: 시작점, 끝점 차이 확인해서 방향이 반대인 모든 조합들을 이어서 line에 저장
     7. 저장한 line들을 return
     
-# Issues
+## Issues
   - skeletonize가 붙어있지 않던 선을 붙이는 경우 있음 (1 case, 선 하나가 약간 길게 나오게 됨) -> 추가 test 필요
   - 끊어진 라인 처리가 애매함 : 현재는 무시하고 진행한 상태, grouping된 선들 gradient 계산하면 할 수야 있기는 한데 잘못하면 이상한 선들끼리 이어질 수 있음. 이런 케이스를 숨기는게 좋아보이긴 함...
